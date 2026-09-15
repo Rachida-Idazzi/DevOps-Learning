@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
+
 # ============================================================
-# Script:     disk-report.sh
 # Objective:  Check disk usage of a directory and alert if it exceeds a given threshold.
 # Usage:      ./disk-report.sh <threshold_percent>
 # ============================================================
 
-set -euo pipefail
+set -euo pipefail 
 
-# TODO: implement
+directory="$1"
+threshold="$2"
+
+disk_usage=$(du -ms "$directory" | awk '{print $1}')
+
+if [ "$disk_usage" -gt "$threshold" ]; then
+    echo "Warning: $directory uses $disk_usage MB (Threshold: $threshold)"
+    exit 1
+else
+    echo "OK: $directory uses $disk_usage MB (Threshold: $threshold)"
+    exit 0
+fi
+
+
+
+
