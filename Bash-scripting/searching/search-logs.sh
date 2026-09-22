@@ -2,7 +2,6 @@
 
 # ============================================================
 # Objective:  Search for a word or phrase across all .log files in a directory and list files that match.
-# Usage:      ./search-logs.sh <phrase> [directory]
 # ============================================================
 
 set -euo pipefail
