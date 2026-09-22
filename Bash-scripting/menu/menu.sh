@@ -22,7 +22,7 @@ echo "4. Quit"
 while true; do 
 
     show_menu
-    read -rp echo "Please enter your choice [1-4]:" choice
+    read -rp "Please enter your choice [1-4]:" choice
     
     case "$choice" in 
     1) 
@@ -37,14 +37,25 @@ while true; do
 
     3) 
      echo "===Users==="
-     who
+     whoami #who and users don't show anything on my setup (WSL)
      ;;
      
+    4|Q|q)
+     echo "Bye!"
+     break
+     ;;
 
+     "")
+      echo "Please choose an option!"
+      ;;
 
+      *)
+       echo "Invalid option"
+    
+    esac
 
+  echo #Blank line for readability
 
-
-
+  
 done
 
