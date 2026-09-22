@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
 # Objective:  Monitor a directory for changes (create/modify/delete) and log each change with a timestamp.
-# Usage:      ./watch-dir.sh [directory]
 # ============================================================
 
 #After installing the inotifywait pakage
